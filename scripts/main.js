@@ -1,12 +1,7 @@
-var renderer = PIXI.autoDetectRenderer(256, 256);
-document.body.appendChild(renderer.view);
+var app = new PIXI.Application();
+//document.body.appendChild(app.view);
+document.getElementById("pixicanvas").appendChild(app.view);
 
-var stage = new PIXI.Container();
+app.ticker.add(function(){
 
-render();
-
-function render() {
-    requestAnimationFrame(render);
-
-    renderer.render(stage);
-}
+});
