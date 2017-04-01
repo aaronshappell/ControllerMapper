@@ -6,16 +6,31 @@
         <link href='https://fonts.googleapis.com/css?family=Work+Sans:200' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Martel:400,400italic,900' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        <script src="scripts/pixi.min.js"></script>
     </head>
     <body>
         <header>
             <h2>Controller Mapper</h2>
         </header>
         <main>
-            <div id="pixicanvas">
-                <!-- div to put pixijs canvas into -->
-            </div>
+            <svg width="100%">
+                <circle id="A" cx="50" cy="50" r="40" fill="black" onclick="selectButton({name:this.id, action:'test1'})"/>
+                <circle id="B" cx="150" cy="50" r="40" fill="black" onclick="selectButton({name:this.id, action:'test2'})"/>
+            </svg>
+            <table>
+                <thead>
+                    <th>Button</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="currentButtonName">A</td>
+                        <td>
+                            <input id="currentButtonAction" type="text" name="" value="" onkeyup="updateButton()">
+                            <br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </main>
         <footer>
             <div class="copyright">&copy; 2017 Aaron Shappell</div>

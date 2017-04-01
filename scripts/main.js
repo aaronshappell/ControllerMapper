@@ -1,7 +1,10 @@
-var app = new PIXI.Application();
-//document.body.appendChild(app.view);
-document.getElementById("pixicanvas").appendChild(app.view);
+function updateButton(){
+    var name = document.getElementById("currentButtonName").innerHTML;
+    var action = document.getElementById("currentButtonAction").value;
+    document.getElementById(name).setAttribute("onclick", "selectButton({name:this.id, action:'" + action + "'})");
+}
 
-app.ticker.add(function(){
-
-});
+function selectButton(data){
+    document.getElementById("currentButtonName").innerHTML = data.name;
+    document.getElementById("currentButtonAction").value = data.action;
+}
