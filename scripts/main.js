@@ -4,7 +4,13 @@ function updateButton(){
     //document.getElementById(name).setAttribute("onclick", "selectButton({name:this.id, action:'" + action + "'})");
 }
 
-function selectButton(data){
+function selectButton(id, data){
+    var highlights = document.getElementsByClassName("highlight");
+    for(i = 0; i < highlights.length; i++){
+        highlights[i].setAttribute("visibility", "hidden");
+    }
+    document.getElementById("h" + id).setAttribute("visibility", "visible");
+
     var table = document.getElementById("selectedButton");
     while(table.hasChildNodes()){
         table.removeChild(table.firstChild);
