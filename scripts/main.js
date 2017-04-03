@@ -1,3 +1,5 @@
+$(".highlight").hide(); //Don't wait for document to load
+
 function updateButton(){
     //var name = document.getElementById("currentButtonName").innerHTML;
     //var action = document.getElementById("currentButtonAction").value;
@@ -5,11 +7,15 @@ function updateButton(){
 }
 
 function selectButton(id, data){
+    /*
     var highlights = document.getElementsByClassName("highlight");
     for(i = 0; i < highlights.length; i++){
         highlights[i].setAttribute("visibility", "hidden");
     }
     document.getElementById("h" + id).setAttribute("visibility", "visible");
+    */
+    $(".highlight").hide();
+    $("#h" + id).fadeIn();
 
     var table = document.getElementById("selectedButton");
     while(table.hasChildNodes()){
